@@ -437,6 +437,35 @@
 #subdash table.sd-srv td.bar{display:flex;align-items:center;justify-content:flex-end;gap:8px}
 #subdash table.sd-srv td.bar i{display:inline-block;height:8px;background:#2e9d74;border-radius:3px}
 #subdash table.sd-srv tr.mut td{color:#737685}
+
+#maildash .md-top{background:#fff;border:1px solid #e1e2ec;border-radius:12px;padding:16px 18px}
+#maildash .md-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding-bottom:12px;border-bottom:1px solid #e1e2ec}
+#maildash .md-kpi .l{font-size:12px;color:#434654}
+#maildash .md-kpi .v{font-size:26px;font-weight:800;color:#191b23;line-height:1.25;margin-top:4px}
+#maildash .md-kpi .v small{font-size:13px;font-weight:600;margin-left:2px;color:#434654}
+#maildash .md-mid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:12px}
+#maildash .md-mid h5{font-size:12.5px;font-weight:700;color:#191b23;margin:0 0 8px}
+#maildash .md-stack{display:flex;height:14px;gap:2px}
+#maildash .md-stack span{border-radius:3px}
+#maildash .md-leg{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:12px;color:#434654}
+#maildash .md-leg i{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px}
+#maildash .md-top3{font-size:12.5px}
+#maildash .md-top3 div{display:flex;justify-content:space-between;padding:4px 0;color:#191b23}
+#maildash .md-top3 div b{font-weight:700}
+#maildash .md-top3 div span{color:#737685}
+#maildash table.md-tbl{width:100%;border-collapse:collapse;font-size:12.5px;background:#fff}
+#maildash .md-tw{border:1px solid #e1e2ec;border-radius:12px;overflow:auto;margin-top:12px;background:#fff}
+#maildash table.md-tbl th{font-size:11.5px;color:#434654;font-weight:600;text-align:right;padding:9px 10px;border-bottom:1px solid #e1e2ec;background:#f7f7fb;white-space:nowrap}
+#maildash table.md-tbl td{text-align:right;padding:8px 10px;border-bottom:1px solid #f0f1f7;color:#191b23;font-variant-numeric:tabular-nums;white-space:nowrap}
+#maildash table.md-tbl th.l,#maildash table.md-tbl td.l{text-align:left}
+#maildash table.md-tbl td.nm{font-weight:700}
+#maildash table.md-tbl td.cnt{min-width:300px}
+#maildash table.md-tbl td.cnt .cw{display:flex;align-items:center;gap:8px}
+#maildash table.md-tbl td.cnt b{width:28px;text-align:right}
+#maildash table.md-tbl td.cnt .bar{display:flex;height:12px;gap:1px}
+#maildash table.md-tbl td.cnt .bar span{border-radius:2px}
+#maildash table.md-tbl td.sep{border-left:1px solid #e1e2ec}
+#maildash table.md-tbl td.mut{color:#737685}
 </style>
 </head>
 <body style="background:#faf8ff;color:#191b23;--d0:43.75%">
@@ -444,7 +473,9 @@
   <div class="mark"><b>서비스 종료 마일스톤</b><small>ONE-BUILD SUNSET BOARD · 2026</small></div>
   <nav id="nav">
     <a href="#amount"><span class="material-symbols-outlined">payments</span>0. 환불 대상액</a>
-      <a class="sub" href="#h-amt-sub">월정액 남은 일수</a>
+      <a class="sub" href="#h-amt-dia">다이아</a>
+      <a class="sub" href="#h-amt-sub">월정액</a>
+      <a class="sub" href="#h-amt-mail">미수령 패키지</a>
     <a href="#milestones"><span class="material-symbols-outlined">timeline</span>1. 마일스톤 한눈에</a>
       <a class="sub" href="#h-plan">확정 마일스톤</a>
       <a class="sub" href="#h-cases">사례 × 국가별 타임라인</a>
@@ -509,7 +540,8 @@
     <h2>환불 대상액</h2>
     <p>2026-10-12 14:24 기준 잔여 유료 다이아를 <a href="#h-rate">02 단가</a> 14.29원으로 환산한 금액이다(58개국 집계). 보고 장표 P-02 2-3은 08-24 집계여서 값이 다르다. 유저 케어용 다이아를 배포하면 종료일까지 줄어든다.</p></div>
 
-  <div class="keyline"><b>대상 3개국</b><span>한국·대만·일본 신청자에게만 지급한다. 대상 외 1,530명은 <a href="#h-plan">01</a>의 글로벌 환불 비대상 결정에 따라 지급하지 않는다.<br><b>자뻑 마케팅 · QA · 핵 의심으로 분류된 30계정</b>을 제외한 실금액이다. 한국 29계정, 독일(대상 외) QA 1계정.</span></div>
+  <h3 id="h-amt-dia" class="chart-title" style="margin-top:22px">다이아 <span style="font-weight:600;color:#737685">— 잔여 유료 다이아 환산액</span></h3>
+  <div class="keyline" style="margin-top:8px"><b>대상 3개국</b><span>한국·대만·일본 신청자에게만 지급한다. 대상 외 1,530명은 <a href="#h-plan">01</a>의 글로벌 환불 비대상 결정에 따라 지급하지 않는다.<br><b>자뻑 마케팅 · QA · 핵 의심으로 분류된 30계정</b>을 제외한 실금액이다. 한국 29계정, 독일(대상 외) QA 1계정.</span></div>
 
   <div class="table-wrap"><table class="matrix" style="min-width:800px">
   <thead><tr><th style="width:17%">국가</th><th class="num">보유 유저</th><th class="num">남은 유료 다이아</th><th class="num">환불 대상 금액</th><th class="num" style="width:11%">금액 비중</th><th class="num" style="width:13%">1인 평균</th></tr></thead>
@@ -537,7 +569,7 @@
   </tbody></table></div>
   <p class="caption" style="margin:6px 0 0">상위 3개국(미국 · 홍콩 · 독일)이 대상 외 금액의 <b>60.8%</b>를 차지한다. 독일은 QA 1계정(2,105,703원)을 제외한 값이다. 집계 시트의 리전 구분 대신 국가 코드로 분류했다.</p>
 
-  <h3 id="h-amt-sub" class="chart-title" style="margin-top:26px">월정액 남은 일수 <span style="font-weight:600;color:#737685">— 2026-10-20 11:11 KST 기준</span></h3>
+  <h3 id="h-amt-sub" class="chart-title" style="margin-top:26px">월정액 <span style="font-weight:600;color:#737685">— 남은 일수 · 2026-10-20 11:11 KST 기준</span></h3>
   <div id="subdash">
     <div class="sd-kpis">
       <div class="sd-kpi"><div class="l">전체 구매 회원</div><div class="v">16,377<small>명</small></div><div class="s">월정액 1회 이상 구매 · 고유 회원 번호 16,274개</div></div>
@@ -569,6 +601,42 @@
       </div>
     </div>
     <p class="caption" style="margin:8px 0 0">현재 이용분은 최장 41일 뒤인 <b>2026-11-30</b>에 모두 끝난다(신규 구매 제외). 서버명의 O는 약칭이다. 출처는 내부 월정액 대시보드다.</p>
+  </div>
+
+  <h3 id="h-amt-mail" class="chart-title" style="margin-top:26px">미수령 패키지 <span style="font-weight:600;color:#737685">— 유료 결제 상품 우편함 · 2026-10-20 업로드 데이터 기준</span></h3>
+  <div id="maildash">
+    <div class="md-top">
+      <div class="md-kpis">
+        <div class="md-kpi"><div class="l">상품 종류</div><div class="v">32<small>종</small></div></div>
+        <div class="md-kpi"><div class="l">계정 수</div><div class="v">156<small>개</small></div></div>
+        <div class="md-kpi"><div class="l">금액</div><div class="v">2,271,300<small>원</small></div></div>
+      </div>
+      <div class="md-mid">
+        <div><h5>권역별 계정</h5><div class="md-stack"><span style="width:79%;background:#3b7be0"></span><span style="width:15%;background:#e46a2e"></span><span style="width:6%;background:#3fae7a"></span></div>
+          <div class="md-leg"><span><i style="background:#3b7be0"></i>Asia <b>123</b>개 (79%)</span><span><i style="background:#e46a2e"></i>US <b>23</b>개 (15%)</span><span><i style="background:#3fae7a"></i>EU <b>10</b>개 (6%)</span></div></div>
+        <div><h5>OS별 계정</h5><div class="md-stack"><span style="width:70%;background:#6a4fd9"></span><span style="width:30%;background:#e6a400"></span></div>
+          <div class="md-leg"><span><i style="background:#6a4fd9"></i>Android <b>109</b>개 (70%)</span><span><i style="background:#e6a400"></i>iOS <b>47</b>개 (30%)</span></div></div>
+        <div class="md-top3"><h5>가장 많은 계정에 남은 상품</h5>
+          <div><b>1. 전설 장비 세트 패키지</b><span>102개 계정</span></div>
+          <div><b>2. [1+1 상품] 105 다이아</b><span>20개 계정</span></div>
+          <div><b>3. 행동력 패키지</b><span>8개 계정</span></div></div>
+      </div>
+    </div>
+    <div class="md-tw"><table class="md-tbl">
+      <thead><tr><th class="l">#</th><th class="l">상품 이름</th><th class="l">계정 수 <span style="font-weight:400;color:#737685">(<i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#3b7be0"></i> Asia <i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#e46a2e"></i> US <i style="display:inline-block;width:7px;height:7px;border-radius:50%;background:#3fae7a"></i> EU)</span></th><th>Asia</th><th>US</th><th>EU</th><th>Android</th><th>iOS</th><th>단가</th><th>금액</th></tr></thead>
+      <tbody>
+<tr><td class="mut">1</td><td class="l nm">전설 장비 세트 패키지</td><td class="l cnt"><div class="cw"><b>102</b><span class="bar"><span style="width:294px;background:#3b7be0"></span><span style="width:60px;background:#e46a2e"></span><span style="width:26px;background:#3fae7a"></span></span></div></td><td>79</td><td>16</td><td>7</td><td class="sep">75</td><td>27</td><td>1,500원</td><td>153,000원</td></tr>
+<tr><td class="mut">2</td><td class="l nm">[1+1 상품] 105 다이아</td><td class="l cnt"><div class="cw"><b>20</b><span class="bar"><span style="width:60px;background:#3b7be0"></span><span style="width:7px;background:#e46a2e"></span><span style="width:7px;background:#3fae7a"></span></span></div></td><td>16</td><td>2</td><td>2</td><td class="sep">12</td><td>8</td><td>1,500원</td><td>30,000원</td></tr>
+<tr><td class="mut">3</td><td class="l nm">행동력 패키지</td><td class="l cnt"><div class="cw"><b>8</b><span class="bar"><span style="width:30px;background:#3b7be0"></span></span></div></td><td>8</td><td>-</td><td>-</td><td class="sep">6</td><td>2</td><td>5,500원</td><td>55,000원</td></tr>
+<tr><td class="mut">4</td><td class="l nm">105 다이아</td><td class="l cnt"><div class="cw"><b>5</b><span class="bar"><span style="width:19px;background:#3b7be0"></span></span></div></td><td>5</td><td>-</td><td>-</td><td class="sep">3</td><td>2</td><td>1,500원</td><td>13,500원</td></tr>
+<tr><td class="mut">5</td><td class="l nm">Daily 골드 패키지</td><td class="l cnt"><div class="cw"><b>4</b><span class="bar"><span style="width:7px;background:#3b7be0"></span><span style="width:4px;background:#e46a2e"></span><span style="width:4px;background:#3fae7a"></span></span></div></td><td>2</td><td>1</td><td>1</td><td class="sep">3</td><td>1</td><td>4,500원</td><td>22,500원</td></tr>
+<tr><td class="mut">6</td><td class="l nm">1챕터 초반 전설 장비</td><td class="l cnt"><div class="cw"><b>3</b><span class="bar"><span style="width:4px;background:#3b7be0"></span><span style="width:4px;background:#e46a2e"></span><span style="width:4px;background:#3fae7a"></span></span></div></td><td>1</td><td>1</td><td>1</td><td class="sep">3</td><td>-</td><td>4,500원</td><td>13,500원</td></tr>
+<tr><td class="mut">7</td><td class="l nm">1챕터 중반 전설 장비 선택팩</td><td class="l cnt"><div class="cw"><b>3</b><span class="bar"><span style="width:11px;background:#3b7be0"></span></span></div></td><td>3</td><td>-</td><td>-</td><td class="sep">2</td><td>1</td><td>1,500원</td><td>4,500원</td></tr>
+<tr><td class="mut">8</td><td class="l nm">10,500 다이아</td><td class="l cnt"><div class="cw"><b>2</b><span class="bar"><span style="width:7px;background:#3b7be0"></span></span></div></td><td>2</td><td>-</td><td>-</td><td class="sep">2</td><td>-</td><td>149,000원</td><td>1,639,000원</td></tr>
+<tr><td class="mut">9</td><td class="l nm">[1+1 상품] 1,050 다이아</td><td class="l cnt"><div class="cw"><b>2</b><span class="bar"><span style="width:7px;background:#3b7be0"></span></span></div></td><td>2</td><td>-</td><td>-</td><td class="sep">2</td><td>-</td><td>15,000원</td><td>30,000원</td></tr>
+<tr><td class="mut">10</td><td class="l nm">전설 무기 스텝업1</td><td class="l cnt"><div class="cw"><b>1</b><span class="bar"><span style="width:4px;background:#3b7be0"></span></span></div></td><td>1</td><td>-</td><td>-</td><td class="sep">-</td><td>1</td><td>33,000원</td><td>33,000원</td></tr>
+      </tbody></table></div>
+    <p class="caption" style="margin:8px 0 0">상위 10종만 옮겼다(전체 32종). 출처는 내부 유료 결제 상품 우편함 대시보드다.</p>
   </div>
 </section>
 
@@ -1434,7 +1502,7 @@
 
 <section id="games">
   <div class="sec-head"><h2>게임별 환불 처리방식</h2>
-    <p>공지 원문을 기준으로 정리했다. 원빌드 조건을 충족하지 않는 5종(섀도우버스 · 바람의나라: 연 · 세븐나이츠2 · 어비스 오브 던전 · A3: 스틸얼라이브)은 <b>비교군</b>으로 두고 카드 머리에 표시했다. 카드는 <b>한국 기준 환불 방식</b>으로 묶었다. </p></div>
+    <p>공지 원문을 기준으로 정리했다. <span class="badge need">확인 필요</span>는 현지어 원문을 확인하지 못했거나 게재되지 않은 경우다.<br><b>원빌드</b>는 <span class="tt" data-tip="일정이 같아도 앱이 다르면 원빌드가 아니다.">같은 빌드를 같은 날 출시한 것</span>을 뜻한다. 원빌드 조건을 충족하지 않는 5종(섀도우버스 · 바람의나라: 연 · 세븐나이츠2 · 어비스 오브 던전 · A3: 스틸얼라이브)은 <b>비교군</b>으로 두고 카드 머리에 표시했다.<br>카드는 <b>한국 기준 환불 방식</b>으로 묶었다. 묶음 안에서는 신청 없이 처리한 사례 → 원빌드 → 종료일 최신순으로 정렬했다. 본문의 「4개 사례」는 저니 오브 모나크 · 별이 되어라2 · 백년전쟁 · 섀도우버스를 가리키며, 이후 추가한 사례는 본문 비교에 넣지 않았다.</p></div>
   <h3 class="chart-title" style="margin-top:26px">① 기간 내 결제 무조건 환불형 <span style="font-weight:600;color:#737685">— NC · 넥슨 · 2종</span></h3>
   <p class="caption" style="margin:4px 0 10px">정한 기간에 결제한 건을 <b>사용 여부와 관계없이 전부</b> 환불(결제 취소)한다. 기간 밖 결제분은 남아 있어도 돌려주지 않는다.</p>
   <div class="card game" id="h-g-jom"><div class="game-head"><h3>저니 오브 모나크</h3><span class="pill ok"><span class="tt" data-tip="2024년 12월 4일 자정 한국·대만·일본·북미·유럽 등 글로벌 241개국에 동시 출시했다. 일본이 같은 출시에 포함돼 별도 앱이 아니다. PC(퍼플)도 함께 운영됐으나 이 문서는 모바일 스토어 결제 기준으로만 정리했다.">글로벌 원빌드</span></span><span class="pill ">NC</span><span class="pill ">D0 2026-08-12</span><span class="pill ">유상 재화: 다이아</span><span class="pill ok">신청: 구글·원스토어 자동 취소 · 애플만 신청</span></div><div class="table-wrap"><table class="matrix" style="min-width:820px"><thead><tr><th>국가</th><th>접수 기간 (D0 기준)</th><th>환불 대상</th><th>방식</th></tr></thead><tbody><tr><td><b>한국</b></td><td>D-21 ~ D+35 (7/22~9/16)</td><td><span class="tt" data-tip="저니 오브 모나크 한국 공지 — 2026-04-08~07-08(판매중단) 사이 모든 유료 결제 건을 스토어별 정책에 따라 구매 취소. 모든 환불 규정은 전자상거래법을 준수한다고 명시.">4/8~7/8 결제 전건 — 기간 취소형</span></td><td>구글·원스토어 자동 취소 / Apple 영수증 첨부 1:1 접수 <a class="cite nt" href="#n1">N01</a></td></tr><tr><td><b>대만</b></td><td>D-21 ~ D+35 (동일)</td><td><span class="tt" data-tip="저니 오브 모나크 대만 공지 원문 — 주의사항에 「以退款申請日為基準，退款範圍僅限未使用完畢的付費貨幣(鑽石)」(환불 신청일을 기준으로, 환불 범위는 미사용 유료 다이아에 한한다)가 명문화돼 있고, 신청서에 「尚未使用完畢的付費鑽石數量」(미사용 유료 다이아 수량)을 본인이 적어 낸다. 즉 신청 시점의 잔액으로 금액이 확정되며, 이후 소진해도 환불액은 바뀌지 않는다. 계정 정지·재확인·차감 조항은 없고, 검증 장치는 「若提供的資料與退款申請內容不一致，將無法辦理退款」(제출 자료와 신청 내용이 다르면 환불 불가) 조항뿐이다.">미사용 유상 다이아<br>— <b>신청일 기준</b> 잔액</span></td><td>1:1 접수 → 대만 계좌 송금 <span class="tt" data-tip="저니 오브 모나크 대만 공지 — 홍콩·마카오는 USD 국제송금, 25 USD 미만 환불 불가(수수료 본인 부담), SWIFT CODE 등 영문 서류 추가, 환율은 접수 마감일 대만 은행 종가 평균.">홍콩·마카오 USD 별도 트랙</span> <a class="cite nt" href="#n2">N02</a></td></tr><tr><td><b>일본</b></td><td><b>D0 ~ D+90</b> (8/12~11/10)</td><td>미사용 유상 다이아</td><td><span class="tt" data-tip="일본 資金決済法(자금결제법) 제20조 제1항 — 전불식지급수단(前払式支払手段)의 발행 업무를 폐지한 때 미사용 잔액(유상 발행분)을 환불해야 하며, 제2항에 따라 관보·일간신문 또는 전자공고로 공고.">자금결제법 공고 양식</span> → 일본 계좌 엔화 송금, 수수료 회사 부담 <a class="cite nt" href="#n3">N03</a></td></tr><tr><td><b>글로벌</b></td><td>D-21 ~ D+35 (한국 동조)</td><td><span class="tt" data-tip="저니 오브 모나크 글로벌(영어) 공지 원문 — 신청서에 'Quantity of unused Paid Diamonds'를 적게 하고, 집행은 'the amount equivalent to the remaining paid Diamonds'를 송금한다고만 적혀 있다. 대만 공지와 달리 기준 시점(신청일인지 집행일인지)을 명시하지 않았다 — 신청 후 소진분이 차감되는지 원문만으로는 확정할 수 없다. 오기재 시 환불 불가 조항은 대만과 동일하게 존재한다.">미사용 유상 다이아 — 기준 시점 미명시</span></td><td>1:1 접수 → USD 국제송금(IBAN·SWIFT 요구, USD 수취 불가 계좌는 환불 불가) <a class="cite nt" href="#n4">N04</a></td></tr></tbody></table></div><p class="comment">일본을 분리한 2개 사례 중 하나이며 <b>D-21에 사전 접수를 연 유일한 사례</b>다. 한국만 기간 취소형이다. <span class="tt" data-tip="저니 오브 모나크 4개국 공지 확인 — 종료 전 접수를 열면서도 계정 정지 조항은 없다. 한국은 결제 건 자체를 취소해 잔액과 무관하고, 대만·글로벌은 '환불 신청일을 기준으로 미사용 유료 다이아에 한한다'는 조항과 신청서의 미사용 수량 자기 기재로 신청 시점에 금액을 확정한다. 일본은 접수를 D0에 열어 문제 자체를 없앴다.">종료 전에 접수를 열었지만 계정 정지 조항은 없다</span>. <span class="tt" data-tip="저니 오브 모나크 대만 공지 원문 — 주의사항에 「以退款申請日為基準，退款範圍僅限未使用完畢的付費貨幣(鑽石)」(환불 신청일을 기준으로, 환불 범위는 미사용 유료 다이아에 한한다)가 명문화돼 있고, 신청서에 「尚未使用完畢的付費鑽石數量」(미사용 유료 다이아 수량)을 본인이 적어 낸다. 즉 신청 시점의 잔액으로 금액이 확정되며, 이후 소진해도 환불액은 바뀌지 않는다. 계정 정지·재확인·차감 조항은 없고, 검증 장치는 「若提供的資料與退款申請內容不一致，將無法辦理退款」(제출 자료와 신청 내용이 다르면 환불 불가) 조항뿐이다.">대만은 신청일 기준을 명문화했으며</span>, <span class="tt" data-tip="저니 오브 모나크 글로벌(영어) 공지 원문 — 신청서에 'Quantity of unused Paid Diamonds'를 적게 하고, 집행은 'the amount equivalent to the remaining paid Diamonds'를 송금한다고만 적혀 있다. 대만 공지와 달리 기준 시점(신청일인지 집행일인지)을 명시하지 않았다 — 신청 후 소진분이 차감되는지 원문만으로는 확정할 수 없다. 오기재 시 환불 불가 조항은 대만과 동일하게 존재한다.">글로벌은 기준 시점을 적지 않았다</span>.</p></div><div class="card game" id="h-g-baram"><div class="game-head"><h3>바람의나라: 연</h3><span class="pill no"><span class="tt" data-tip="한국 전용 서비스다. 해외 정식 서비스 이력은 확인되지 않았다. 넥슨코리아·슈퍼캣 공동 서비스.">원빌드 아님 · 한국 전용</span></span><span class="pill ">넥슨 · 슈퍼캣</span><span class="pill ">D0 2027-02-12</span><span class="pill ">환불 단위: 결제 건</span><span class="pill ">신청 필요 · 전 스토어</span></div><div class="table-wrap"><table class="matrix" style="min-width:820px"><thead><tr><th>국가</th><th>접수 기간 (D0 기준)</th><th>환불 대상</th><th>방식</th></tr></thead><tbody><tr><td><b>한국</b></td><td><b>D-183 ~ D+30</b> (26/8/13~27/3/14)</td><td><span class="tt" data-tip="바람의나라: 연 환불 페이지 — 환불 대상은 『2026년 2월 12일 오전 0시 00분 ~ 2026년 8월 12일 17시 00분』(공지일 직전 6개월) 동안 결제한 유료 상품 구매건이며, 아이템 수령·사용 여부와 관계없이 스토어·결제 수단에 따라 결제 취소 혹은 환불한다. 직접 청약철회한 구매 내역과 마일리지·Google PlayPoint 등 포인트 결제분은 제외한다.">공지일 직전 6개월 결제 전건 — 기간 취소형</span><br>그 이전 결제 미사용분 제외</td><td>자동 환불 없음 · 신청자만 지급한다. PC·구글은 웹페이지 접수, 앱스토어·원스토어는 고객센터 1:1 접수 <a class="cite nt" href="#n26">N26</a></td></tr></tbody></table></div><p class="comment">저니 오브 모나크 한국과 같은 <b>기간 취소형</b>이되 기간을 6개월로 잡았고, 공지 다음 날 접수를 열어 <b>종료 후 30일</b>까지 받는다. 그 이전 결제 미사용 재화를 제외하는 방식이 <b>약관규제법 제9조 제5호와 충돌할 수 있다는 보도</b>가 나왔다 <a class="cite" href="#s64">S64</a>. 환불은 계정 간 선물과 무관하게 <b>결제한 계정 기준</b>으로 진행한다.</p></div><h3 class="chart-title" style="margin-top:26px">② 잔여 유상 재화+패키지 환불형(미수령) <span style="font-weight:600;color:#737685">— 크래프톤 · 2종</span></h3>

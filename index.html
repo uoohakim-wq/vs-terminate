@@ -815,7 +815,7 @@
 
 <h3 id="h-flow" class="chart-title" style="margin-top:22px">처리 절차</h3>
     <div class="steps">
-      <div class="step"><div><h4>접수</h4><p><b>4개 언어</b>(한국어·중국어(번체)·일본어·영어) 1:1 문의로 접수한다. 이외 국가는 영어로 받는다. 미수령 패키지는 플랫폼이 요구하는 양식으로 따로 접수한다. 계정 식별자·연락처·계좌와 <b>스크린샷 3종</b>을 받고, 동의는 기존 체크박스로 받는다(<a href="#privacy">03</a>).</p></div></div>
+      <div class="step"><div><h4>접수</h4><p><b>4개 언어</b>(한국어·중국어(번체)·일본어·영어) 1:1 문의로 접수한다. 이외 국가는 영어로 받는다. 미수령 패키지는 플랫폼이 요구하는 양식으로 따로 접수한다. 계정 식별자·연락처·계좌와 <b>스크린샷 3종</b>(일본은 D-60 ~ D-31 결제 영수증만)을 받고, 동의는 기존 체크박스로 받는다(<a href="#privacy">03</a>).</p></div></div>
       <div class="step"><div><h4>본인 · 결제 검증</h4><p>계정과 결제 이력을 대조하고, <b>스토어에서 이미 환불된 건</b>이나 <b>D-60 ~ D-31 결제분과 중복되지 않는지 확인한다</b>.</p>
         <ul><li><b>스토어 환불·차지백:</b> 구글 무효 구매(Voided Purchases API)는 <b>최근 30일분만 조회</b>되므로 D-60부터 주기적으로 받아 저장한다 <a class="cite" href="#s91">S91</a>. 애플은 <b>REFUND 알림</b>을 받아 계정에 연결해 둔다 <a class="cite" href="#s89">S89</a>. 이미 환불된 결제는 전액 환불에서 빼고, 그 결제로 받은 다이아는 잔액 계산에서 계속 뺀다</li>
         <li><b>제외 계정:</b> 자뻑 마케팅·QA·핵 의심 계정(<a href="#h-amt-dia">00</a>)은 기간 결제 전액 환불에서도 뺀다. 기간 결제가 급증한 계정은 개별 확인한다</li></ul></div></div>
@@ -837,23 +837,21 @@
   </div>
 
     <div class="keyline"><b>세 가지만 정하면 된다</b><span>
-  <b>① 무엇을 받는가:</b> 계정 식별 정보, 연락처, 계좌와 <b>스크린샷 3종</b>을 <b>전 국가에서</b> 받는다. 계좌는 결제 수단으로 환불할 수 없을 때 쓴다.<br>
+  <b>① 무엇을 받는가:</b> 계정 식별 정보, 연락처, 계좌를 받는다. <b>스크린샷 3종</b>은 한국·대만·글로벌에서 받고, 일본은 <b>D-60 ~ D-31 결제 영수증</b>만 받는다. 계좌는 결제 수단으로 환불할 수 없을 때 쓴다.<br>
   <b>② 어떻게 받는가:</b> 종료 공지 링크로 <b>1:1 문의</b>에 들어가 환불 유형을 고르면 템플릿으로 접수된다. 동의는 <b>기존 체크박스</b>로 받는다.<br>
   <b>③ 어떻게 지우는가:</b> 지급이 끝나면 <b>즉시 파기</b>하고, 거래·분쟁 기록만 법정 기간 보존한다.</span></div>
 
   <h3 id="h-what" class="chart-title" style="margin-top:30px">1. 무엇을 받나 <span style="font-weight:600;color:#737685">— 한국 · 대만 · 일본 · 글로벌</span></h3>
-<div class="table-wrap"><table class="matrix" style="min-width:960px"><thead><tr><th style="width:13%">항목</th><th>한국</th><th>대만</th><th>일본</th><th>글로벌</th></tr></thead><tbody>
-  <tr><td><b>계정 식별</b></td><td>닉네임 · 서버 · 회원번호(ID)</td><td>한국과 동일 항목</td><td>한국과 동일 항목</td><td>한국과 동일 항목</td></tr>
-  <tr><td><b>실명</b></td><td>예금주명이 대신함</td><td><span class="tt" data-tip="저니 오브 모나크 대만 공지는 真實姓名(실명)과 手機號碼(휴대폰 번호)를 별도 항목으로 요구했다. 한국·일본 공지에는 실명 단독 항목이 없고 계좌 명의로 갈음된다.">실명 별도 요구</span></td><td><span class="tt" data-tip="일본은 氏名을 漢字 표기와 カタカナ 표기 두 가지로 요구한다. 계좌 정보 항목에도 口座名義(漢字)와 口座名義(カナ)가 각각 들어간다.">한자·가나 2종 표기</span></td><td>예금주명이 대신함</td></tr>
-  <tr><td><b>연락처</b></td><td>이메일은 계좌 입금 실패에 대비해 받는다</td><td>이메일 + <b>휴대폰 번호</b></td><td>이메일 + 전화번호</td><td>이메일</td></tr>
-  <tr><td><b>계좌</b></td><td>국내 계좌<br>— 은행명·계좌번호·예금주명</td><td>대만 계좌는 은행명·지점명·계좌번호·명의를 받는다<br>· <span class="tt" data-tip="저니 오브 모나크 대만 공지 — 홍콩·마카오 거주자는 BANK NAME, BANK ADDRESS, SWIFT CODE, BANK'S ACCOUNT NAME, BANK'S ACCOUNT NO를 모두 영문으로 기재하고 신청인 거주 주소까지 영문으로 제출해야 한다.">홍콩·마카오는 영문 SWIFT 정보와 거주 주소를 추가로 받는다</span></td><td><span class="tt" data-tip="일본 국내 은행 계좌만 지정할 수 있고, 금융기관명·지점명·지점번호(지점코드)·계좌종별·계좌번호·명의(漢字)·명의(カナ)까지 항목이 세분화되어 있다. 4개 지역 중 계좌 항목 수가 가장 많다.">국내 계좌 · 7개 항목</span></td><td><b>현지 통화 계좌</b>, 불가 시 <b>USD 수취 계좌</b><br>· <span class="tt" data-tip="저니 오브 모나크 글로벌 공지와 접수 폼은 USD 국제송금용으로 수취 은행명·계좌번호·IBAN(EU)·ABA 라우팅 번호(미국)·예금주명·은행 주소·수취인 주소·SWIFT 코드 8개 필드를 받았다.">국제송금 정보(SWIFT·IBAN·ABA 등)를 받는다</span></td></tr>
-  <tr class="pick"><td><b>추가 자료</b><br><span style="color:#737685;font-size:11px">스크린샷 3종</span></td>
-    <td colspan="4"><b>① 회원번호</b>, <b>② 다이아 유·무료 구분</b>, <b>③ 최근 결제 영수증</b> 세 가지를 전 국가 공통으로 파일 첨부로 받는다<br>
-    <span style="color:#737685;font-size:11.5px">환불액은 서버 잔액과 우편함 기록으로 산정하므로 스크린샷은 <b>본인·결제 검증용</b>이다(<a href="#h-flow">02 처리 절차</a>).</span></td></tr>
-  <tr><td><b>동의</b></td><td colspan="4"><b>기존 1:1 문의의 개인정보 수집·이용 동의 체크박스로 받으며</b>, 새 동의 절차를 만들지 않는다<br>
-    <span style="color:#ba1a1a;font-weight:700;font-size:11.5px">단, 현행 문구는 「문의 처리」 목적이어서 계좌 수집과 환불 지급을 넣어 보완해야 한다(<a href="#h-how">2. 어떻게 받나</a>)</span></td></tr>
-  </tbody></table></div>
-  <p class="caption"><b>지역에 따라 달라지는 항목은 실명·연락처·계좌</b> 세 가지다. 글로벌은 영어 템플릿으로 같은 항목을 받는다.</p>
+<div class="keyline" style="margin-top:0"><b>한국·대만·글로벌 공통</b><span><b>계정 식별</b> 닉네임 · 서버 · 회원번호(ID)<br><b>추가 자료</b> 스크린샷 3종(① 회원번호 ② 다이아 유·무료 구분 ③ 최근 결제 영수증)을 파일로 받는다. 환불액은 서버 잔액과 우편함 기록으로 산정하므로 본인·결제 검증용이다(<a href="#h-flow">02 처리 절차</a>).<br><b>동의</b> 기존 1:1 문의 체크박스로 받는다. 현행 문구는 「문의 처리」 목적이어서 계좌 수집과 환불 지급을 넣어 보완한다(<a href="#h-how">2. 어떻게 받나</a>).</span></div>
+<details class="evi"><summary><span class="evk">한국</span><span>실명은 예금주명으로 대신 · 국내 계좌 3항목</span><span class="evx"></span></summary>
+  <div class="evi-in"><div class="table-wrap" style="margin-top:0"><table class="matrix" style="min-width:560px"><thead><tr><th style="width:16%">항목</th><th>받는 것</th></tr></thead><tbody><tr><td><b>실명</b></td><td>예금주명이 대신함</td></tr><tr><td><b>연락처</b></td><td>이메일 · 계좌 입금 실패에 대비해 받는다</td></tr><tr><td><b>계좌</b></td><td>국내 계좌 — 은행명 · 계좌번호 · 예금주명</td></tr></tbody></table></div></div></details>
+<details class="evi"><summary><span class="evk">대만</span><span>실명 · 휴대폰 번호 별도 · 대만 계좌 4항목 · 홍콩·마카오는 SWIFT</span><span class="evx"></span></summary>
+  <div class="evi-in"><div class="table-wrap" style="margin-top:0"><table class="matrix" style="min-width:560px"><thead><tr><th style="width:16%">항목</th><th>받는 것</th></tr></thead><tbody><tr><td><b>실명</b></td><td><span class="tt" data-tip="저니 오브 모나크 대만 공지는 真實姓名(실명)과 手機號碼(휴대폰 번호)를 별도 항목으로 요구했다. 한국·일본 공지에는 실명 단독 항목이 없고 계좌 명의로 갈음된다.">실명 별도 요구</span></td></tr><tr><td><b>연락처</b></td><td>이메일 + <b>휴대폰 번호</b></td></tr><tr><td><b>계좌</b></td><td>대만 계좌 — 은행명 · 지점명 · 계좌번호 · 명의<br>· <span class="tt" data-tip="저니 오브 모나크 대만 공지 — 홍콩·마카오 거주자는 BANK NAME, BANK ADDRESS, SWIFT CODE, BANK'S ACCOUNT NAME, BANK'S ACCOUNT NO를 모두 영문으로 기재하고 신청인 거주 주소까지 영문으로 제출해야 한다.">홍콩·마카오는 영문 SWIFT 정보와 거주 주소를 추가로 받는다</span></td></tr></tbody></table></div></div></details>
+<details class="evi"><summary><span class="evk">일본</span><span>저니 오브 모나크 일본 공지 기준 · 성명 한자·가타카나 · 국내 계좌 6항목</span><span class="evx"></span></summary>
+  <div class="evi-in"><div class="table-wrap" style="margin-top:0"><table class="matrix" style="min-width:760px"><thead><tr><th style="width:14%">항목</th><th>받는 것</th><th style="width:32%">근거</th></tr></thead><tbody><tr><td><b>계정 식별</b></td><td>닉네임 · 서버 · 회원번호(ID)</td><td>저니 오브 모나크 — 공지의 캐릭터/서버명, 접수 폼의 플레이어ID <a class="cite nt" href="#n3">N03</a> <a class="cite" href="#s39">S39</a></td></tr><tr><td><b>성명</b></td><td><b>한자 + 가타카나</b> 2종 표기</td><td>저니 오브 모나크 <a class="cite nt" href="#n3">N03</a></td></tr><tr><td><b>연락처</b></td><td>메일 주소 + <b>전화번호</b></td><td>저니 오브 모나크 <a class="cite nt" href="#n3">N03</a></td></tr><tr><td><b>계좌</b></td><td><b>일본 국내 은행 계좌만</b> — 금융기관명 · 지점명 · 계좌종별 · 계좌번호 · 명의(한자) · 명의(가타카나)</td><td>저니 오브 모나크 <a class="cite nt" href="#n3">N03</a></td></tr><tr class="pick"><td><b>결제 영수증</b></td><td><b>D-60 ~ D-31 결제분</b>의 스토어 결제 영수증</td><td>저니 오브 모나크 한국(애플 결제분 영수증·결제 내역 첨부) <a class="cite nt" href="#n1">N01</a> · 어비스 오브 던전(10/1 이후 결제분 영수증 첨부·주문번호) <a class="cite nt" href="#n34">N34</a></td></tr><tr><td><b>동의</b></td><td>기존 1:1 문의 체크박스 · 문구에 계좌 수집과 환불 지급 목적을 넣는다</td><td>저니 오브 모나크 — 일본어 접수 폼에 목적·수집 항목(은행 계좌 포함)·보유 기간·거부 시 신청 불가를 고지 <a class="cite" href="#s39">S39</a></td></tr></tbody></table></div></div></details>
+<details class="evi"><summary><span class="evk">글로벌</span><span>현지 통화 계좌, 불가 시 USD · SWIFT·IBAN·ABA</span><span class="evx"></span></summary>
+  <div class="evi-in"><div class="table-wrap" style="margin-top:0"><table class="matrix" style="min-width:560px"><thead><tr><th style="width:16%">항목</th><th>받는 것</th></tr></thead><tbody><tr><td><b>실명</b></td><td>예금주명이 대신함</td></tr><tr><td><b>연락처</b></td><td>이메일</td></tr><tr><td><b>계좌</b></td><td><b>현지 통화 계좌</b>, 불가 시 <b>USD 수취 계좌</b><br>· <span class="tt" data-tip="저니 오브 모나크 글로벌 공지와 접수 폼은 USD 국제송금용으로 수취 은행명·계좌번호·IBAN(EU)·ABA 라우팅 번호(미국)·예금주명·은행 주소·수취인 주소·SWIFT 코드 8개 필드를 받았다.">국제송금 정보(SWIFT·IBAN·ABA 등)를 받는다</span></td></tr></tbody></table></div></div></details>
+
 
     
 <details class="evi"><summary><span class="evk">사례</span><span>4개 사례 — 수집 방식 4패턴 · 공지 본문 기재 범위</span><span style="font-size:11px;color:#737685;font-weight:400">폼 자동 / 2단계 / 1회 일괄 / 계좌 없음</span><span class="evx"></span></summary>
